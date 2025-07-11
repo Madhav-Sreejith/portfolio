@@ -6,9 +6,10 @@ export default function Home() {
           <img src="/myfoto.jpg" alt="Madhav" />
         </div>
         <div className="home-content">
-          <h1>Hi, I'm Madhav Sreejith 👋</h1>
+          <h1> I'm Madhav Sreejith 👋</h1>
           <p>
-            A 3rd year Computer Science student passionate about crafting elegant web applications and solving problems.
+                Fueled by coffee, powered by stack traces. I break things just to fix them better.
+
           </p>
           <div className="home-buttons">
             <a href="/about" className="btn">About Me</a>
