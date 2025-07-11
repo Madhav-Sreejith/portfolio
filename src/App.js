@@ -2,14 +2,17 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Project from './pages/Project';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <nav style={{ margin: 10 }}>
-        <Link to="/" style={{ padding: 5 }}>Home</Link>
-        <Link to="/about" style={{ padding: 5 }}>About</Link>
-        <Link to="/project" style={{ padding: 5 }}>Projects</Link>
+      <nav className="navbar">
+        <div className="nav-container">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/project" className="nav-link">Projects</Link>
+        </div>
       </nav>
 
       <Routes>
