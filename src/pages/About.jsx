@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="about_title">About Me</h1>
 
       <p className="about_para">
-        Hi, I'm <strong>Madhav Sreejith</strong>, a 3rd-year Computer Science student passionate about technology and problem-solving.
+        Hi, I'm <strong>Madhav Sreejith</strong>,  currently pursuing a BTech in Computer Science and Engineering at Amrita School of Engineering, Coimbatore. I'm passionate about technology, problem-solving, and building innovative software solutions that make a meaningful impact.
       </p>
 
       <p>
@@ -31,7 +31,7 @@ export default function About() {
         <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
-        <a href="mailto:youremail@example.com">
+        <a href="mailto:madhavsreejith123@gmail.com">
           Email
         </a>
       </div>
