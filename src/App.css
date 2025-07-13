@@ -40,7 +40,7 @@
 /* For about page */
 
 .about{
-   max-width: 800px;
+  max-width: 800px;
   margin: 50px auto;
   padding: 20px;
   line-height: 1.6;
@@ -81,10 +81,10 @@
   position: sticky; 
   top: 0;
   width: 100%;
-  background: rgba(15,32,39,0.7); 
+  background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(8px); 
   z-index: 1000;
-  padding: 15px 0;
+  padding: 20px 0;
 }
 
 .nav-container {
@@ -97,16 +97,17 @@
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
 .nav-link {
   color: #f5f5f5;
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size:1.3rem;
+  font-weight:600;
   position: relative;
-  transition: color 0.3s;
+  letter-spacing: 0.5px;
+  transition: color 0.3s transform 0.2s;
 }
 
 /* Underline animation */
@@ -128,19 +129,6 @@
 .nav-link:hover::after {
   width: 100%;
 }
-/* The invisible line animation*/
-
-.nav-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #333;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 
 .nav-link:hover {
   color: #61dafb;
@@ -151,14 +139,11 @@
 }
 
 
-body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
 
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
 body::before {
   content: "";
@@ -171,59 +156,143 @@ body::before {
 
 /* For Intoduction and stuff*/
 .home-container {
-  max-width: 1000px;
-  margin: 100px auto;
+  max-width: 1200px;
+  margin: 80px auto;
   display: flex;
+  justify-content: space-between; /* push left and right apart */
   align-items: center;
   gap: 40px;
-  padding: 20px;
+  padding: 0 20px;
 }
 
-.home-photo img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+/* group photo + text together */
+.home-photo, .home-content {
+  flex: 0 0 auto;
 }
 
-.home-content h1 {
-  font-size: 2.5rem;
-  color: #f5f5f5;
-  margin-bottom: 15px;
-}
-
-.home-content p {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 30px;
-}
-
-.home-buttons {
+/* container to wrap photo + text */
+.left-block {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
-.btn {
-  background: #61dafb;
-  color: #000;
-  padding: 10px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+/* profile photo */
+.home-photo img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.btn:hover {
-  background: #23a6d5;
-  color: #fff;
+/* name + tagline */
+.home-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #e0f7ff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.home-content .tagline {
+  font-size: 1.6rem; 
+  max-width: 450px;
+  line-height: 1.7;
+  color: #dff9fb; 
+}
+/* highlights stacked on right side */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 0 0 auto;
 }
 
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column;
-    text-align: center;
+.highlight-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  border: 2px solid #61dafb; /* Added border for the box*/
+  border-radius: 12px;
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border-left: 4px solid #61dafb;
+  transition: transform 0.3s, background 0.3s;
+}
+.highlight-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  border-left-color: #00ffc8; /*Hover effect */
+}
+
+/*For the heading in home */
+h1 {
+  font-size: 3.5rem; 
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f0f8ff; 
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 1.6rem; 
+  font-style: italic; 
+  color: #dcdcdc;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px auto; 
+}
+
+
+/*Animation when home log in*/
+.home-content, .skills-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+/*Highlights*/
+.highlights-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.highlights-section h2 {
+  font-size: 2.2rem;
+  color: #f0f8ff;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.highlights-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.highlight-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px 30px;
+  border-radius: 12px;
+  color: #f5f5f5;
+  font-size: 1.3rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.highlight-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
 }
 
 
@@ -235,10 +304,11 @@ body::before {
 }
 
 .skills-section h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f0f8ff;
   margin-bottom: 30px;
-  color: #f5f5f5;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
 .skills-list {
@@ -377,3 +447,46 @@ body::before {
   text-decoration: underline;
 }
 
+/*footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  color:#cccccc;
+  font-size:medium;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/*Icons*/
+.TechImg{
+  margin: 60px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.TechImg h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.IconsTech {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.IconsTech img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.IconsTech img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+}
