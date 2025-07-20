@@ -4,23 +4,23 @@ export default function About() {
       <h1 className="about_title">About Me</h1>
 
       <p className="about_para">
-        Hi, I'm <strong>Madhav Sreejith</strong>,  currently pursuing a BTech in Computer Science and Engineering at Amrita School of Engineering, Coimbatore. I'm passionate about technology, problem-solving, and building innovative software solutions that make a meaningful impact.
+          I'm <strong>Madhav Sreejith</strong>, currently pursuing my BTech in Computer Science at Amrita School of Engineering, Coimbatore. I'm deeply passionate about technology, problem solving, and crafting software that genuinely makes lives better.
       </p>
 
       <p>
-        I enjoy learning new concepts, building meaningful projects, and exploring how software can improve lives.
+        I thrive on learning new concepts, tackling real-world problems, and bringing ideas to life through meaningful projects.
       </p>
 
       <h2 className="about_subtitle">What I'm focusing on:</h2>
       <ul className="about_list">
-        <li>⚛️ Web Development (ReactJS, HTML, CSS, JavaScript)</li>
-        <li>📚 Data Structures & Algorithms</li>
-        <li>🧩 Core Computer Science concepts</li>
+        <li>⚛️ Building new Projects</li>
+        <li>📚 Leveling up my DSA & competitive coding skills (LeetCode addict!)</li>
+        <li>🧩 Diving deeper into core CS concepts & software design</li>
       </ul>
 
       <h2 className="about_subtitle">Beyond coding</h2>
       <p>
-        I like reading books, playing games, and taking on new challenges. Always excited to collaborate on interesting projects!
+        I love reading books, exploring new games, and jumping into hackathons. Always up for collaborating on cool ideas and tackling new challenges!
       </p>
 
       <h2 className="about_subtitle">Let's Connect</h2>
@@ -37,7 +37,7 @@ export default function About() {
       </div>
 
       <p className="about_quote">
-        "I believe in building things that matter."
+        "Fueled by coffee & curiosity. I love building things that matter."
       </p>
     </div>
   );

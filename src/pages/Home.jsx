@@ -25,11 +25,11 @@ export default function Home() {
       <div className="skills-section">
         <h2>Skills</h2>
         <div className="skills-list">
-          <div className="skill-card">💻 Frontend Dev</div>
-          <div className="skill-card">⚙️ DSA</div>
-          <div className="skill-card">🚀 React & JS</div>
-          <div className="skill-card">🐍 Python</div>
-          <div className="skill-card">🔍 Problem Solving</div>
+          <div className="skill-card">🖥️ Full-Stack Web Development</div>
+          <div className="skill-card">💡 Data Structures & Algorithms</div>
+          <div className="skill-card">🧩 Problem Solving & Debugging</div>
+          <div className="skill-card">🔍 Competitive Coding</div>
+          <div className="skill-card">🌐 Networking & Real-Time Data</div>
         </div>
       </div>
 
