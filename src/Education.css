@@ -1,53 +1,60 @@
-.education-container {
-  margin-top: 30px;
-  padding: 20px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-.education-title {
-  font-size: 1.8rem;
-  color: mediumaquamarine;
-  margin-bottom: 30px;
-}
-
 .education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Ensure all boxes take the same height */
+.education-box {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .education-grid {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-  }
-}
-
-.education-box {
-  background: rgba(15, 20, 30, 0.6); /* same as .about */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  color: #e5e5e5;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-  display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between; /* Add space between logo and content */
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;  /* Let parent grid stretch them */
+  min-height: 320px;  /* Set a consistent baseline height */
+  box-sizing: border-box;
+}
+
+.education-box:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 10px rgba(52, 152, 219, 0.3),   /* Soft blue */
+    0 0 20px rgba(52, 152, 219, 0.2),
+    0 0 40px rgba(52, 152, 219, 0.15),
+    0 8px 24px rgba(52, 152, 219, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .institution-logo {
-  width: 80px;
-  height: auto;
-  border-radius: 10px;
-  flex-shrink: 0;
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .education-content {
-  text-align: left;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color:cornflowerblue;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
