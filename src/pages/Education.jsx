@@ -9,7 +9,7 @@ function Education() {
       <div className="education-grid">
         <div className="education-box">
             <div className="logo-container">
-                 <img src="/amritalogo.jpeg" alt="College Logo" className="institution-logo" />
+                <img src={process.env.PUBLIC_URL + "/amritalogo.jpeg"} alt="College Logo" />
             </div>
           <div className="education-content">
             <p>Amrita Vishwa Vidyapeetham</p>
@@ -20,7 +20,7 @@ function Education() {
 
         <div className="education-box">
             <div className="logo-container">
-                <img src="/rijuandpsk.png" alt="School Logo" className="institution-logo" />
+                <img src={process.env.PUBLIC_URL + "/rijuandpsk.png"} alt="School Logo" className="institution-logo" />
             </div>
           <div className="education-content">
             <p>Gurukula Public School</p>

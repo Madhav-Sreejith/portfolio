@@ -4,7 +4,7 @@ export default function Home() {
       <div className="home-container">
         <div className="left-block">
           <div className="home-photo">
-            <img src="/myfoto.jpg" alt="Madhav" />
+            <img src={process.env.PUBLIC_URL + "/myfoto.jpg"} alt="Madhav" />
           </div>
           <div className="home-content">
             <h1>Madhav Sreejith</h1>
@@ -35,12 +35,12 @@ export default function Home() {
       <div className="TechImg">
         <h2>Tech I Use</h2>
         <div className="IconsTech">
-          <img src="/Python_logo.svg" alt="Python" />
-          <img src="/c++logo.png" alt="C++" />
-          <img src="/html2logo.png" alt="Html" />
-          <img src="/javascript-logo.png" alt="JavaScript" />
-          <img src="/logo192.png" alt="React" />
-          <img src="/githublogo.png" alt="Github" />
+          <img src={process.env.PUBLIC_URL + "/Python_logo.svg"} alt="Python" />
+          <img src={process.env.PUBLIC_URL + "/c++logo.png"} alt="C++" />
+          <img src={process.env.PUBLIC_URL + "/html2logo.png"} alt="Html" />
+          <img src={process.env.PUBLIC_URL + "/JavaScript-logo.png"} alt="JavaScript" />
+          <img src={process.env.PUBLIC_URL + "/logo512.png"} alt="React" />
+          <img src={process.env.PUBLIC_URL + "/githublogo.png"} alt="Github" />
         </div>
       </div>
 
