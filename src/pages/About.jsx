@@ -1,3 +1,7 @@
+import React from 'react';
+import Education from './Education';
+import '../Education.css';
+
 export default function About() {
   return (
     <div className="about animation1">
@@ -11,13 +15,8 @@ export default function About() {
         I’m passionate about <strong>problem solving, full-stack development, and exploring system design</strong>. Whether it’s cracking tough DSA problems or architecting clean and scalable web apps, I strive to learn by doing.
       </p>
 
-      <h2 className="about_subtitle">🎓 Education</h2>
-      <ul className="about_list">
-        <li><strong>B.Tech in Computer Science Engineering</strong></li>
-        <li>Amrita School of Engineering, Coimbatore</li>
-        <li>Expected Graduation: 2026</li>
-        <li>Relevant coursework: Data Structures, Algorithms, DBMS, OS, Computer Networks, Web Development</li>
-      </ul>
+      {/* ✅ This now renders your custom Education boxes */}
+      <Education />
 
       <h2 className="about_subtitle">💻 What I'm Currently Focused On</h2>
       <ul className="about_list">
@@ -57,10 +56,6 @@ export default function About() {
           Email
         </a>
       </div>
-
-      <p className="about_quote">
-        "Fueled by curiosity and a keyboard. Let’s build something amazing together."
-      </p>
     </div>
   );
 }
