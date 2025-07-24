@@ -4,26 +4,48 @@ export default function About() {
       <h1 className="about_title">About Me</h1>
 
       <p className="about_para">
-          I'm <strong>Madhav Sreejith</strong>, currently pursuing my BTech in Computer Science at Amrita School of Engineering, Coimbatore. I'm deeply passionate about technology, problem solving, and crafting software that genuinely makes lives better.
+        Hey! I'm <strong>Madhav Sreejith</strong>, a B.Tech Computer Science undergraduate at <strong>Amrita School of Engineering, Coimbatore</strong>. With a strong foundation in software development and a love for building creative tech solutions, I'm always eager to explore the endless possibilities in computer science.
       </p>
 
       <p>
-        I thrive on learning new concepts, tackling real-world problems, and bringing ideas to life through meaningful projects.
+        I’m passionate about <strong>problem solving, full-stack development, and exploring system design</strong>. Whether it’s cracking tough DSA problems or architecting clean and scalable web apps, I strive to learn by doing.
       </p>
 
-      <h2 className="about_subtitle">What I'm focusing on:</h2>
+      <h2 className="about_subtitle">🎓 Education</h2>
       <ul className="about_list">
-        <li>⚛️ Building new Projects</li>
-        <li>📚 Leveling up my DSA & competitive coding skills (LeetCode addict!)</li>
-        <li>🧩 Diving deeper into core CS concepts & software design</li>
+        <li><strong>B.Tech in Computer Science Engineering</strong></li>
+        <li>Amrita School of Engineering, Coimbatore</li>
+        <li>Expected Graduation: 2026</li>
+        <li>Relevant coursework: Data Structures, Algorithms, DBMS, OS, Computer Networks, Web Development</li>
       </ul>
 
-      <h2 className="about_subtitle">Beyond coding</h2>
+      <h2 className="about_subtitle">💻 What I'm Currently Focused On</h2>
+      <ul className="about_list">
+        <li>⚛️ Building full-stack web projects using React and Node.js</li>
+        <li>📈 Mastering DSA & competitive programming (proud LeetCode warrior 🛡️)</li>
+        <li>🧠 Deep-diving into OS, DBMS, and software architecture principles</li>
+        <li>💡 Participating in hackathons and coding contests for real-world experience</li>
+      </ul>
+
+      <h2 className="about_subtitle">🌱 Technical Skills</h2>
+      <ul className="about_list">
+        <li><strong>Languages:</strong> C++, Python, JavaScript</li>
+        <li><strong>Web Dev:</strong> React, Node.js, Express, MongoDB</li>
+        <li><strong>Tools:</strong> Git, VS Code, Postman, Figma</li>
+        <li><strong>Concepts:</strong> Data Structures, Algorithms, DBMS, OOP, REST APIs</li>
+      </ul>
+
+      <h2 className="about_subtitle">🧠 Projects & Hackathons</h2>
       <p>
-        I love reading books, exploring new games, and jumping into hackathons. Always up for collaborating on cool ideas and tackling new challenges!
+        I'm always building something! From productivity tools and mini-games to full-blown web applications, I use every project as a learning experience. I've also participated in college hackathons and enjoy collaborating on impactful ideas.
       </p>
 
-      <h2 className="about_subtitle">Let's Connect</h2>
+      <h2 className="about_subtitle">🎮 Beyond Coding</h2>
+      <p>
+        Outside the screen, I enjoy gaming, reading tech blogs, exploring design aesthetics, and diving into random topics that spark my curiosity. Whether it's a new framework or a sci-fi book, I’m all in.
+      </p>
+
+      <h2 className="about_subtitle">📬 Let's Connect</h2>
       <div className="social-links">
         <a href="https://github.com/madhav-sreejith" target="_blank" rel="noopener noreferrer">
           GitHub
@@ -37,7 +59,7 @@ export default function About() {
       </div>
 
       <p className="about_quote">
-        "Fueled by coffee & curiosity. I love building things that matter."
+        "Fueled by curiosity and a keyboard. Let’s build something amazing together."
       </p>
     </div>
   );

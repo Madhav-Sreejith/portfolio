@@ -174,6 +174,7 @@ body::before {
   flex: 0 0 auto;
 }
 
+
 /* container to wrap photo + text */
 .left-block {
   display: flex;
@@ -184,9 +185,9 @@ body::before {
 /* profile photo */
 .home-photo img {
   width: 220px;
-  height: 220px;
+  height: 270px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
@@ -194,15 +195,19 @@ body::before {
 .home-content h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  color: #e0f7ff;
+  color: #a89cc8;  
   letter-spacing: 1.5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
 }
+
 .home-content .tagline {
-  font-size: 1.6rem; 
+  font-size: 1.6rem;
   max-width: 450px;
   line-height: 1.7;
-  color: #dff9fb; 
+  color: #b5adc7; 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
 }
 /* highlights stacked on right side */
 .right-section {
@@ -270,7 +275,7 @@ h1 {
 
 .highlights-section h2 {
   font-size: 2.2rem;
-  color: #f0f8ff;
+  color: #c7c9f2;
   margin-bottom: 40px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -311,7 +316,7 @@ h1 {
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f0f8ff;
+  color:#c7c9f2;
   margin-bottom: 30px;
 }
 
@@ -513,3 +518,4 @@ h1 {
   transform: scale(1.15);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
+

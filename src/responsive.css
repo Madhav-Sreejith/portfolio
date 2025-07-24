@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .home-photo img {
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Add more responsive styles here... */
+}

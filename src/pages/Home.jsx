@@ -9,8 +9,7 @@ export default function Home() {
           <div className="home-content">
             <h1>Madhav Sreejith</h1>
             <p className="tagline">
-              Fueled by coffee, powered by stack traces.<br/>
-              I break things just to fix them better.
+              I'm <strong>Madhav Sreejith</strong>, a CS undergrad passionate about full-stack web development, DSA, and building real-world tech projects.
             </p>
           </div>
         </div>
