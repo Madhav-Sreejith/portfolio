@@ -22,7 +22,7 @@
 .education-box:hover {
   transform: scale(1.04);
   box-shadow:
-    0 0 10px rgba(52, 152, 219, 0.3),   /* Soft blue */
+    0 0 10px rgba(52, 152, 219, 0.3),  
     0 0 20px rgba(52, 152, 219, 0.2),
     0 0 40px rgba(52, 152, 219, 0.15),
     0 8px 24px rgba(52, 152, 219, 0.1);
@@ -36,7 +36,7 @@
 }
 
 .institution-logo {
-  max-height: 80px;
+  max-height: 150px;
   width: auto;
   object-fit: contain;
 }
