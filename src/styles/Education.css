@@ -1,0 +1,62 @@
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.education-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; 
+  min-height: 320px; 
+  box-sizing: border-box;
+}
+
+.education-box:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 10px rgba(52, 152, 219, 0.3),  
+    0 0 20px rgba(52, 152, 219, 0.2),
+    0 0 40px rgba(52, 152, 219, 0.15),
+    0 8px 24px rgba(52, 152, 219, 0.1);
+}
+
+.logo-container {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+}
+
+.institution-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.education-content {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color:cornflowerblue;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

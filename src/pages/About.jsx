@@ -1,6 +1,6 @@
 import React from 'react';
 import Education from './Education';
-import '../Education.css';
+import '../styles/Education.css';
 
 export default function About() {
   return (

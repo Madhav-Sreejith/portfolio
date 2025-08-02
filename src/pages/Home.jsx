@@ -1,4 +1,6 @@
-export default function Home() {
+import "../styles/home.css"
+
+function Home() {
   return (
     <div>
       <div className="home-container">
@@ -50,3 +52,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
