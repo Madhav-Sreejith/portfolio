@@ -13,6 +13,20 @@
   }
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  background: url('../public/bg3.jpg') no-repeat center center fixed;
+
+  background-size: cover;
+}
+
+html {
+  background-color: #111;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
