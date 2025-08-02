@@ -4,18 +4,17 @@
   gap: 20px;
 }
 
-/* Ensure all boxes take the same height */
 .education-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Add space between logo and content */
+  justify-content: space-between; 
   background-color: #1e1e2f;
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;  /* Let parent grid stretch them */
-  min-height: 320px;  /* Set a consistent baseline height */
+  height: 100%; 
+  min-height: 320px; 
   box-sizing: border-box;
 }
 

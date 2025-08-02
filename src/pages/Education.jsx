@@ -9,7 +9,7 @@ function Education() {
       <div className="education-grid">
         <div className="education-box">
             <div className="logo-container">
-                <img src={process.env.PUBLIC_URL + "/amritalogo.jpeg"} alt="College Logo" />
+                <img src={process.env.PUBLIC_URL + "/amritalogo.jpeg"} alt="College Logo"  className="institution-logo"/>
             </div>
           <div className="education-content">
             <p>Amrita Vishwa Vidyapeetham</p>
