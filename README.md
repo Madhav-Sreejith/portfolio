@@ -21,16 +21,10 @@
 
 ---
 
-## 📸 Preview
-*(Add your actual screenshot here for better impact)*  
-![Portfolio Screenshot](./public/images/preview.png)
-
----
-
 ## 🚀 Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/madhav-sreejith/portfolio.git
 
 # Install dependencies
 npm install
