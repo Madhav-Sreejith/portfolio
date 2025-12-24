@@ -1,143 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* -------------------------
+   GLOBAL
+--------------------------*/
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   color: #f5f5f5;
-  background: url('../public/bg3.jpg') no-repeat center center fixed;
 
+  /* Background image fix */
+  background: url('/public/bg4.jpg') no-repeat center center fixed;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 html {
   background-color: #111;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Dark overlay to improve readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* -------------------------
+   APP ROOT
+--------------------------*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* For about page */
-
-.about{
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  line-height: 1.6;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
-}
-
-.about_title {
-  font-size: 2.5rem;
+.App {
   text-align: center;
-  color: #333;
-  margin-bottom: 20px;
 }
 
-.about_para {
-  font-size: 1.1rem;
-  color: #555;
-}
-/*About Page Animation*/
-
-.animation1 {
-  animation: fadeScale 1.3s ease forwards;
-}
-
-@keyframes fadeScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+/* Removed spinning animation for professionalism */
 
 
-/* Buttons on Home */
+/* -------------------------
+   NAVBAR
+--------------------------*/
 
 .navbar {
-  position: sticky; 
+  position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(8px); 
+  padding: 16px 0;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+
   z-index: 1000;
-  padding: 20px 0;
 }
 
 .nav-container {
-  max-width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 0 20px;
 }
 
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 34px;
 }
 
 .nav-link {
   color: #f5f5f5;
+  font-size: 1.2rem;
+  font-weight: 500;
   text-decoration: none;
-  font-size:1.3rem;
-  font-weight:600;
+
   position: relative;
-  letter-spacing: 0.5px;
-  transition: color 0.3s transform 0.2s;
+  transition: color 0.3s ease;
 }
 
-/* Underline animation */
+/* Underline hover animation */
 .nav-link::after {
   content: "";
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
-  bottom: -3px;
   left: 0;
+  bottom: -4px;
+
   background-color: #61dafb;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover {
@@ -148,129 +100,20 @@ html {
   width: 100%;
 }
 
-.nav-link:hover {
-  color: #61dafb;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-
+/* -------------------------
+   HEADINGS
+--------------------------*/
 
 h1, h2, h3 {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
+/* -------------------------
+   TECH ICONS SECTION
+--------------------------*/
 
-/* About */
-
-.about {
-  max-width: 850px;
-  margin: 60px auto;
-  padding: 40px;
-  background: rgba(15, 20, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  font-family: 'Poppins', sans-serif;
-  color: #e5e5e5;
-}
-
-.about_title {
-  font-size: 3rem;
-  text-align: center;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 255, 200, 0.2);
-  margin-bottom: 25px;
-}
-
-.about_para, .about_list, .about p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #e0e0e0;
-}
-
-.about_subtitle {
-  font-size: 1.7rem;
-  align-self: center;
-  margin: 35px 0 15px;
-  color:mediumaquamarine;
-  text-align: center;
-  padding: 0.1px;
-  border-radius: 8px;
-}
-
-.about_list {
-  list-style: none;
-  padding: 0;
-}
-
-.about_list li {
-  margin-bottom: 12px;
-  position: relative;
-  padding-left: 28px;
-}
-
-.about_list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 10px;
-  height: 10px;
-  background: #61dafb;
-  border-radius: 50%;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 25px;
-}
-
-.social-links a {
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
-}
-
-.social-links a:hover {
-  color: #00ffc8;
-  border-bottom: 2px solid #00ffc8;
-  transform: scale(1.1);
-}
-
-
-
-
-
-/*footer */
-.footer {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
-  color:#cccccc;
-  font-size:medium;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-/*Icons*/
-.TechImg{
+.TechImg {
   margin: 60px auto;
   max-width: 800px;
   text-align: center;
@@ -278,27 +121,62 @@ body::before {
 
 .TechImg h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #ffffff;
 }
 
 .IconsTech {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .IconsTech img {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .IconsTech img:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
 
+/* -------------------------
+   FOOTER
+--------------------------*/
+
+.footer {
+  margin-top: 60px;
+  padding: 20px 0;
+
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbbbbb;
+
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* -------------------------
+   MOBILE RESPONSIVE
+--------------------------*/
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    gap: 22px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+  }
+
+  .IconsTech img {
+    width: 50px;
+    height: 50px;
+  }
+}

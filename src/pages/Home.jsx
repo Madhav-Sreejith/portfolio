@@ -1,51 +1,94 @@
-import "../styles/home.css"
+import "../styles/home.css";
 
 function Home() {
+  const highlights = [
+    "🌟 Web Development",
+    "💡 Data Structures & Algorithms",
+    "💻 Competitive Programming",
+  ];
+
+  const skills = [
+    "🖥️ Full-Stack Web Development",
+    "💡 Data Structures & Algorithms",
+    "🧩 Problem Solving & Debugging",
+    "🔍 Competitive Coding",
+    "🌐 Networking & Real-Time Data",
+  ];
+
+  const techIcons = [
+    { src: "/Python_logo.svg", alt: "Python" },
+    { src: "/c++logo.png", alt: "C++" },
+    { src: "/html2logo.png", alt: "HTML" },
+    { src: "/JavaScript-logo.png", alt: "JavaScript" },
+    { src: "/logo512.png", alt: "React" },
+    { src: "/githublogo.png", alt: "Github" },
+  ];
+
   return (
-    <div>
-      <div className="home-container">
-        <div className="left-block">
+    <div className="home-page">
+
+      {/* TOP SECTION */}
+      <section className="home-container">
+
+        {/* LEFT SECTION */}
+        <div className="left-block text-block">
           <div className="home-photo">
-            <img src={process.env.PUBLIC_URL + "/myfoto.jpg"} alt="Madhav" />
+            <img
+              src={process.env.PUBLIC_URL + "/myfoto.jpg"}
+              alt="Madhav"
+              loading="lazy"
+            />
           </div>
+
           <div className="home-content">
-            <h1>Madhav Sreejith</h1>
+            <h1 className="home-title">Madhav Sreejith</h1>
             <p className="tagline">
-              I'm <strong>Madhav Sreejith</strong>, a CS undergrad passionate about full-stack web development, DSA, and building real-world tech projects.
+              CS undergrad passionate about full-stack development, DSA, and
+              building real-world tech projects.
             </p>
+
           </div>
         </div>
 
-        <div className="right-section">
-          <div className="highlight-card">🌟 Aspiring Software Engineer</div>
-          <div className="highlight-card">💡 Proud Leet Coder</div>
-          <div className="highlight-card">💻 Full Stack Developer</div>
+        {/* RIGHT SECTION */}
+        <div className="right-section text-block">
+          {highlights.map((item, index) => (
+            <div key={index} className="highlight-card fade-in">
+              {item}
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="skills-section">
+      {/* SKILLS SECTION */}
+      <section className="skills-section text-block">
         <h2>Skills</h2>
         <div className="skills-list">
-          <div className="skill-card">🖥️ Full-Stack Web Development</div>
-          <div className="skill-card">💡 Data Structures & Algorithms</div>
-          <div className="skill-card">🧩 Problem Solving & Debugging</div>
-          <div className="skill-card">🔍 Competitive Coding</div>
-          <div className="skill-card">🌐 Networking & Real-Time Data</div>
+          {skills.map((skill, index) => (
+            <div key={index} className="skill-card fade-in">
+              {skill}
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="TechImg">
+      {/* TECH SECTION */}
+      <section className="TechImg text-block">
         <h2>Tech I Use</h2>
         <div className="IconsTech">
-          <img src={process.env.PUBLIC_URL + "/Python_logo.svg"} alt="Python" />
-          <img src={process.env.PUBLIC_URL + "/c++logo.png"} alt="C++" />
-          <img src={process.env.PUBLIC_URL + "/html2logo.png"} alt="Html" />
-          <img src={process.env.PUBLIC_URL + "/JavaScript-logo.png"} alt="JavaScript" />
-          <img src={process.env.PUBLIC_URL + "/logo512.png"} alt="React" />
-          <img src={process.env.PUBLIC_URL + "/githublogo.png"} alt="Github" />
+          {techIcons.map((icon, index) => (
+            <img
+              key={index}
+              src={process.env.PUBLIC_URL + icon.src}
+              alt={icon.alt}
+              loading="lazy"
+              className="tech-icon fade-in"
+            />
+          ))}
         </div>
-      </div>
+      </section>
 
+      {/* FOOTER */}
       <footer className="footer">
         <p>© 2025 Madhav</p>
       </footer>

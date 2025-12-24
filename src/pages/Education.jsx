@@ -1,37 +1,50 @@
 import React from 'react';
 import '../styles/Education.css';
 
-function Education() {
+export default function Education() {
+  
+  const educationData = [
+    {
+      logo: "/amritalogo.jpeg",
+      alt: "Amrita University Logo",
+      institution: "Amrita Vishwa Vidyapeetham",
+      details: ["Bachelor of Technology - Computer Science", "2023 - Present"]
+    },
+    {
+      logo: "/rijuandpsk.png",
+      alt: "Gurukula Public School Logo",
+      institution: "Gurukula Public School",
+      details: ["Grade: 96%", "2021 - 2023"]
+    }
+  ];
+
   return (
-    <div className="education-container">
+    <section className="education-container">
       <h2 className="education-title">Education</h2>
 
       <div className="education-grid">
-        <div className="education-box">
+        {educationData.map((item, index) => (
+          <div key={index} className="education-box">
+            
             <div className="logo-container">
-                <img src={process.env.PUBLIC_URL + "/amritalogo.jpeg"} alt="College Logo"  className="institution-logo"/>
+              <img 
+                src={process.env.PUBLIC_URL + item.logo} 
+                alt={item.alt}
+                className="institution-logo"
+                loading="lazy"
+              />
             </div>
-          <div className="education-content">
-            <p>Amrita Vishwa Vidyapeetham</p>
-            <p>Bachelor of Technology- Computer Science</p>
-            <p>2023-Present</p>
-          </div>
-        </div>
 
-        <div className="education-box">
-            <div className="logo-container">
-                <img src={process.env.PUBLIC_URL + "/rijuandpsk.png"} alt="School Logo" className="institution-logo" />
+            <div className="education-content">
+              <p className="institution-name">{item.institution}</p>
+              {item.details.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
             </div>
-          <div className="education-content">
-            <p>Gurukula Public School</p>
-            <p>Grade: 96%</p>
-            <p>2021-2023</p>
 
           </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Education;

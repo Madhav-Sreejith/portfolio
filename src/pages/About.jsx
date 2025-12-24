@@ -1,61 +1,78 @@
 import React from 'react';
 import Education from './Education';
 import '../styles/Education.css';
+import '../styles/About.css';
 
 export default function About() {
   return (
     <div className="about animation1">
+      
       <h1 className="about_title">About Me</h1>
 
       <p className="about_para">
-        Hey! I'm <strong>Madhav Sreejith</strong>, a B.Tech Computer Science undergraduate at <strong>Amrita School of Engineering, Coimbatore</strong>. With a strong foundation in software development and a love for building creative tech solutions, I'm always eager to explore the endless possibilities in computer science.
+        Hey! I'm <strong>Madhav Sreejith</strong>, a B.Tech Computer Science undergraduate at 
+        <strong> Amrita School of Engineering, Coimbatore</strong>. I’m passionate about software development 
+        and love building clean, scalable, and meaningful tech solutions.
       </p>
 
-      <p>
-        I’m passionate about <strong>problem solving, full-stack development, and exploring system design</strong>. Whether it’s cracking tough DSA problems or architecting clean and scalable web apps, I strive to learn by doing.
+      <p className="about_para">
+        I enjoy <strong>problem-solving, full-stack development, and system design</strong>. Whether it’s 
+        architecting a web app or breaking down complex DSA problems, I learn best by experimenting and building.
       </p>
 
-      {/* ✅ This now renders your custom Education boxes */}
+      {/* Education Section */}
       <Education />
 
-      <h2 className="about_subtitle">💻 What I'm Currently Focused On</h2>
-      <ul className="about_list">
-        <li>⚛️ Building full-stack web projects using React and Node.js</li>
-        <li>📈 Mastering DSA & competitive programming (proud LeetCode warrior 🛡️)</li>
-        <li>🧠 Deep-diving into OS, DBMS, and software architecture principles</li>
-        <li>💡 Participating in hackathons and coding contests for real-world experience</li>
-      </ul>
+      {/* Focus Section */}
+      <section>
+        <h2 className="about_subtitle">💻 What I'm Currently Focused On</h2>
+        <ul className="about_list">
+          <li>⚛️ Developing full-stack applications using React and Node.js</li>
+          <li>🧠 Strengthening DSA & competitive problem-solving</li>
+          <li>📚 Deep-diving into OS, DBMS, and system architecture</li>
+          <li>🚀 Participating in hackathons & collaborative coding events</li>
+        </ul>
+      </section>
 
-      <h2 className="about_subtitle">🌱 Technical Skills</h2>
-      <ul className="about_list">
-        <li><strong>Languages:</strong> C++, Python, JavaScript</li>
-        <li><strong>Web Dev:</strong> React, Node.js, Express, MongoDB</li>
-        <li><strong>Tools:</strong> Git, VS Code, Postman, Figma</li>
-        <li><strong>Concepts:</strong> Data Structures, Algorithms, DBMS, OOP, REST APIs</li>
-      </ul>
+      {/* Skills Section */}
+      <section>
+        <h2 className="about_subtitle">🌱 Technical Skills</h2>
+        <ul className="about_list">
+          <li><strong>Languages:</strong> C++, Python, JavaScript</li>
+          <li><strong>Web Dev:</strong> React, Node.js, Express, MongoDB</li>
+          <li><strong>Tools:</strong> Git, VS Code, Postman, Figma</li>
+          <li><strong>Core CS:</strong> Data Structures, Algorithms, DBMS, OOP, REST APIs</li>
+        </ul>
+      </section>
 
-      <h2 className="about_subtitle">🧠 Projects & Hackathons</h2>
-      <p>
-        I'm always building something! From productivity tools and mini-games to full-blown web applications, I use every project as a learning experience. I've also participated in college hackathons and enjoy collaborating on impactful ideas.
-      </p>
+      {/* Projects Section */}
+      <section>
+        <h2 className="about_subtitle">🧠 Projects & Hackathons</h2>
+        <p className="about_para">
+          I love building projects that challenge my thinking — from productivity tools and interactive 
+          applications to full-stack systems. Hackathons help me test ideas fast and collaborate with 
+          amazing teams.
+        </p>
+      </section>
 
-      <h2 className="about_subtitle">🎮 Beyond Coding</h2>
-      <p>
-        Outside the screen, I enjoy gaming, reading tech blogs, exploring design aesthetics, and diving into random topics that spark my curiosity. Whether it's a new framework or a sci-fi book, I’m all in.
-      </p>
+      {/* Beyond Coding Section */}
+      <section>
+        <h2 className="about_subtitle">🎮 Beyond Coding</h2>
+        <p className="about_para">
+          Outside of tech, I enjoy gaming, exploring UI/UX design, reading tech blogs, and diving into 
+          anything that sparks my curiosity — whether it's a new framework or a sci-fi adventure.
+        </p>
+      </section>
 
-      <h2 className="about_subtitle">📬 Let's Connect</h2>
-      <div className="social-links">
-        <a href="https://github.com/madhav-sreejith" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a href="mailto:madhavsreejith123@gmail.com">
-          Email
-        </a>
-      </div>
+      {/* Social Section */}
+      <section>
+        <h2 className="about_subtitle">📬 Let's Connect</h2>
+        <div className="social-links">
+          <a href="https://github.com/madhav-sreejith" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/madhav-sreejith/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:madhavsreejith123@gmail.com">Email</a>
+        </div>
+      </section>
     </div>
   );
 }

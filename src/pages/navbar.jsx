@@ -1,14 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';  
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <div className="logo">MyPortfolio</div>
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/project">Projects</Link></li>
+
+      {/* LOGO */}
+      <NavLink to="/" className="logo">
+        MyPortfolio
+      </NavLink>
+
+      {/* HAMBURGER ICON (mobile) */}
+      <div 
+        className="menu-icon" 
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </div>
+
+      {/* NAV LINKS */}
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/project">
+            Projects
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
