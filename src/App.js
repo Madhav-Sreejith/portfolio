@@ -7,27 +7,32 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-     
+    <>
+      {/* Background overlay (safe on mobile) */}
+      <div className="bg-overlay" />
+
+      {/* Mouse blob */}
       <Mouse />
 
-      <header className="navbar">
-        <div className="nav-container">
-          <nav className="nav-links">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About</Link>
-            <Link to="/project" className="nav-link">Projects</Link>
-          </nav>
-        </div>
-      </header>
+      <Router>
+        <header className="navbar">
+          <div className="nav-container">
+            <nav className="nav-links">
+              <Link to="/" className="nav-link">Home</Link>
+              <Link to="/about" className="nav-link">About</Link>
+              <Link to="/project" className="nav-link">Projects</Link>
+            </nav>
+          </div>
+        </header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

@@ -1,63 +1,88 @@
-/* -------------------------
-   GLOBAL
---------------------------*/
+/* =================================================
+   GLOBAL RESET
+================================================= */
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
   font-family: 'Poppins', sans-serif;
   color: #f5f5f5;
-
-  /* Background image fix */
-  background: url('/public/bg4.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #111;
   overflow-x: hidden;
 }
 
-html {
-  background-color: #111;
+/* =================================================
+   BACKGROUND IMAGE (SAFE FOR ALL DEVICES)
+================================================= */
+
+body {
+  background-image: url("/public/bg4.jpg"); /* ✅ correct path */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-/* Dark overlay to improve readability */
-body::before {
-  content: "";
+/* Disable fixed background on mobile */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
+/* =================================================
+   DARK OVERLAY (CORRECT WAY)
+================================================= */
+
+.bg-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: -1;
+  pointer-events: none;
 }
 
-/* -------------------------
-   APP ROOT
---------------------------*/
-
-.App {
-  text-align: center;
+/* Slightly stronger overlay on mobile */
+@media (max-width: 768px) {
+  .bg-overlay {
+    background: rgba(0, 0, 0, 0.55);
+  }
 }
 
-/* Removed spinning animation for professionalism */
+/* =================================================
+   Z-INDEX SAFETY (CONTENT ABOVE OVERLAY)
+================================================= */
 
+.navbar,
+.home-page,
+.home-container,
+.about,
+.projects-container,
+section {
+  position: relative;
+  z-index: 1;
+}
 
-/* -------------------------
+/* =================================================
    NAVBAR
---------------------------*/
+================================================= */
 
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
   padding: 16px 0;
-
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
-
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -74,12 +99,10 @@ body::before {
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
-
   position: relative;
   transition: color 0.3s ease;
 }
 
-/* Underline hover animation */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -87,7 +110,6 @@ body::before {
   height: 2px;
   left: 0;
   bottom: -4px;
-
   background-color: #61dafb;
   transition: width 0.3s ease;
 }
@@ -100,29 +122,23 @@ body::before {
   width: 100%;
 }
 
-/* -------------------------
+/* =================================================
    HEADINGS
---------------------------*/
+================================================= */
 
 h1, h2, h3 {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* -------------------------
-   TECH ICONS SECTION
---------------------------*/
+/* =================================================
+   TECH ICONS
+================================================= */
 
 .TechImg {
   margin: 60px auto;
   max-width: 800px;
   text-align: center;
-}
-
-.TechImg h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #ffffff;
 }
 
 .IconsTech {
@@ -136,37 +152,32 @@ h1, h2, h3 {
   width: 60px;
   height: 60px;
   object-fit: contain;
-
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .IconsTech img:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
 
-/* -------------------------
+/* =================================================
    FOOTER
---------------------------*/
+================================================= */
 
 .footer {
   margin-top: 60px;
   padding: 20px 0;
-
   text-align: center;
   font-size: 0.95rem;
   color: #bbbbbb;
-
   border-top: 1px solid rgba(255,255,255,0.15);
 }
 
-/* -------------------------
-   MOBILE RESPONSIVE
---------------------------*/
+/* =================================================
+   MOBILE
+================================================= */
 
 @media (max-width: 768px) {
-
   .nav-links {
     gap: 22px;
   }
