@@ -1,12 +1,16 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Project from './pages/Project';
-import './App.css';
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Project from "./pages/Project";
+import Mouse from "./pages/Mouse";
+import "./App.css";
 
 function App() {
   return (
     <Router>
+     
+      <Mouse />
+
       <header className="navbar">
         <div className="nav-container">
           <nav className="nav-links">
@@ -21,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<Project />} />
-        <Route path="*" element={<Home />} /> {/* fallback route */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );

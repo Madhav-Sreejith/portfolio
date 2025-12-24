@@ -10,13 +10,17 @@
   --edu-shadow-hover: 0 18px 55px rgba(0, 0, 0, 0.55);
 }
 
-/* Container – prevents overlap with next section */
+/* -------------------------------------------------
+   Container
+-------------------------------------------------- */
 .education-container {
   margin-bottom: 80px;
-  padding-bottom: 40px;
+  padding: 0 20px 40px;
 }
 
-/* Title */
+/* -------------------------------------------------
+   Title
+-------------------------------------------------- */
 .education-title {
   font-size: 2.4rem;
   font-weight: 700;
@@ -28,7 +32,9 @@
   text-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
-/* Grid layout */
+/* -------------------------------------------------
+   Grid Layout
+-------------------------------------------------- */
 .education-grid {
   display: grid;
   gap: 28px;
@@ -38,7 +44,9 @@
   margin: 0 auto;
 }
 
-/* Education Card */
+/* -------------------------------------------------
+   Education Card
+-------------------------------------------------- */
 .education-box {
   background: linear-gradient(
     180deg,
@@ -49,27 +57,30 @@
   border-radius: var(--edu-radius);
   backdrop-filter: blur(var(--edu-blur));
   padding: 26px;
-  height: 100%;
   min-height: 330px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 18px;
 
   box-shadow: var(--edu-shadow);
-  transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms;
-  will-change: transform;  /* smooth animation, no flicker */
+  transition: transform 260ms cubic-bezier(.2, .9, .2, 1),
+              box-shadow 260ms,
+              border-color 260ms;
+  will-change: transform;
 }
 
-/* Hover upgrade */
 .education-box:hover {
   transform: translateY(-6px);
   box-shadow: var(--edu-shadow-hover);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Logo container */
+/* -------------------------------------------------
+   Logo
+-------------------------------------------------- */
 .logo-container {
   width: 120px;
   height: 120px;
@@ -78,19 +89,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: rgba(255,255,255,0.05);
   padding: 10px;
 }
 
-/* Logo Image */
 .institution-logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Content Section */
+/* -------------------------------------------------
+   Content
+-------------------------------------------------- */
 .education-content {
   text-align: center;
   display: flex;
@@ -107,7 +118,6 @@
 
 .education-content p:nth-child(2) {
   font-size: 1rem;
-  color: var(--edu-muted);
 }
 
 .education-content p:last-child {
@@ -116,18 +126,86 @@
   margin-top: 6px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
+/* =================================================
+   RESPONSIVE DESIGN
+================================================= */
+
+/* -------- Large Tablets (≤ 1024px) -------- */
+@media (max-width: 1024px) {
+  .education-title {
+    font-size: 2.1rem;
+  }
+
+  .education-grid {
+    gap: 24px;
+  }
+}
+
+/* -------- Tablets (≤ 768px) -------- */
+@media (max-width: 768px) {
   .education-title {
     font-size: 1.9rem;
+    margin-bottom: 30px;
   }
 
   .education-box {
-    padding: 20px;
-    min-height: 290px;
+    padding: 22px;
+    min-height: 300px;
+  }
+
+  .logo-container {
+    width: 100px;
+    height: 100px;
   }
 
   .education-content p:first-child {
     font-size: 1.2rem;
+  }
+
+  .education-content p:nth-child(2),
+  .education-content p:last-child {
+    font-size: 0.95rem;
+  }
+}
+
+/* -------- Mobile (≤ 600px) -------- */
+@media (max-width: 600px) {
+  .education-container {
+    padding: 0 14px 30px;
+  }
+
+  .education-title {
+    font-size: 1.7rem;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .education-box {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .logo-container {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* -------- Small Phones (≤ 420px) -------- */
+@media (max-width: 420px) {
+  .education-title {
+    font-size: 1.5rem;
+  }
+
+  .education-content p:first-child {
+    font-size: 1.1rem;
+  }
+
+  .education-content p:nth-child(2),
+  .education-content p:last-child {
+    font-size: 0.9rem;
   }
 }

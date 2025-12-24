@@ -74,6 +74,7 @@
   justify-content: center;
   gap: 30px;
   margin-top: 25px;
+  flex-wrap: wrap;
 }
 
 .social-links a {
@@ -101,5 +102,95 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+/* -------- Tablets (≤ 1024px) -------- */
+@media (max-width: 1024px) {
+  .about {
+    max-width: 90%;
+    padding: 32px;
+  }
+
+  .about_title {
+    font-size: 2.5rem;
+  }
+
+  .about_subtitle {
+    font-size: 1.5rem;
+  }
+
+  .about_para,
+  .about_list,
+  .about p {
+    font-size: 1.1rem;
+  }
+}
+
+/* -------- Mobile Devices (≤ 768px) -------- */
+@media (max-width: 768px) {
+  .about {
+    margin: 40px 15px;
+    padding: 28px;
+    border-radius: 16px;
+  }
+
+  .about_title {
+    font-size: 2.1rem;
+  }
+
+  .about_subtitle {
+    font-size: 1.4rem;
+  }
+
+  .about_para,
+  .about_list,
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about_list li {
+    padding-left: 24px;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+}
+
+/* -------- Small Phones (≤ 480px) -------- */
+@media (max-width: 480px) {
+  .about {
+    margin: 30px 12px;
+    padding: 22px;
+  }
+
+  .about_title {
+    font-size: 1.8rem;
+  }
+
+  .about_subtitle {
+    font-size: 1.2rem;
+  }
+
+  .about_para,
+  .about_list,
+  .about p {
+    font-size: 0.95rem;
+  }
+
+  .about_list li::before {
+    top: 8px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .social-links a {
+    font-size: 0.95rem;
   }
 }

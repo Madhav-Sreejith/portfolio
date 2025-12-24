@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../styles/project.css";
 
 const projects = [
@@ -30,14 +31,49 @@ const projects = [
 
 function Project() {
   return (
-    <section className="projects-container" aria-labelledby="projects-heading">
-      <h1 id="projects-heading" className="projects-title">
+    <motion.section
+      className="projects-container"
+      aria-labelledby="projects-heading"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+    >
+      {/* TITLE */}
+      <motion.h1
+        id="projects-heading"
+        className="projects-title"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         My Projects
-      </h1>
+      </motion.h1>
 
-      <div className="project-list">
+      {/* PROJECT LIST */}
+      <motion.div
+        className="project-list"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
         {projects.map((project) => (
-          <article className="project-card" key={project.title}>
+          <motion.article
+            className="project-card"
+            key={project.title}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4 }}
+          >
             <header>
               <h2 className="project-card-title">{project.title}</h2>
               <span className="project-status" aria-hidden="true">
@@ -45,18 +81,22 @@ function Project() {
               </span>
             </header>
 
-            <p className="project-card-description">{project.description}</p>
+            <p className="project-card-description">
+              {project.description}
+            </p>
 
             <div className="project-links">
-              <a
-                className="project-card-link"
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${project.title} demo in new tab`}
-              >
-                View Demo
-              </a>
+              {project.link && (
+                <a
+                  className="project-card-link"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.title} demo in new tab`}
+                >
+                  View Demo
+                </a>
+              )}
 
               {project.repo && (
                 <a
@@ -70,10 +110,10 @@ function Project() {
                 </a>
               )}
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
