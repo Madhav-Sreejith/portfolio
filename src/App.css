@@ -17,7 +17,7 @@ html, body {
 ================================================= */
 
 body {
-  background-image: url("/public/bg4.jpg"); /* ✅ correct path */
+  background-image: url("/public/bg5.jpg"); 
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
