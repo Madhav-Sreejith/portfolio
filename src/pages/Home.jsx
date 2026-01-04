@@ -1,4 +1,4 @@
-import "../styles/home.css";
+import "../styles/Home.css";
 import { motion } from "framer-motion";
 
 function Home() {

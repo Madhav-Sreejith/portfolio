@@ -2,17 +2,13 @@ import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Project from "./pages/Project";
-import Mouse from "./pages/Mouse";
 import "./App.css";
 
 function App() {
   return (
     <>
-      {/* Background overlay (safe on mobile) */}
+      {/* Background overlay */}
       <div className="bg-overlay" />
-
-      {/* Mouse blob */}
-      <Mouse />
 
       <Router>
         <header className="navbar">
