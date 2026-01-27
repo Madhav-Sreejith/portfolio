@@ -3,51 +3,62 @@ import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Navbar.css";
 
-/* ✅ Replace REPO_NAME with your actual repo name */
 const RESUME_URL =
-  "https://raw.githubusercontent.com/Madhav-Sreejith/REPO_NAME/main/resume.pdf";
+  "https://raw.githubusercontent.com/Madhav-Sreejith/portfolio/main/resume.pdf";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
 
+  const navLinkClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
-    <nav className="navbar">
+    <motion.nav
+      className="navbar"
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       {/* LOGO */}
       <NavLink to="/" className="logo" onClick={closeMenu}>
-        MyPortfolio
+        <span className="logo-mark">MS</span>
+        <span className="logo-text">Portfolio</span>
       </NavLink>
 
       {/* HAMBURGER ICON */}
-      <div
+      <button
         className={`menu-icon ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((open) => !open)}
+        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        aria-expanded={menuOpen}
       >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
 
       {/* DESKTOP NAV */}
       <ul className="nav-links desktop">
         <li>
-          <NavLink to="/" end className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink to="/" end className={navLinkClass}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink to="/about" className={navLinkClass}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/project" className={({ isActive }) => isActive ? "active" : ""}>
+          <NavLink to="/project" className={navLinkClass}>
             Projects
           </NavLink>
         </li>
         <li>
           <a
+            className="nav-link nav-link-resume"
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,22 +73,29 @@ function Navbar() {
         {menuOpen && (
           <motion.ul
             className="nav-links mobile"
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
           >
             <li onClick={closeMenu}>
-              <NavLink to="/" end>Home</NavLink>
+              <NavLink to="/" end className={navLinkClass}>
+                Home
+              </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about" className={navLinkClass}>
+                About
+              </NavLink>
             </li>
             <li onClick={closeMenu}>
-              <NavLink to="/project">Projects</NavLink>
+              <NavLink to="/project" className={navLinkClass}>
+                Projects
+              </NavLink>
             </li>
             <li onClick={closeMenu}>
               <a
+                className="nav-link nav-link-resume"
                 href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,7 +106,7 @@ function Navbar() {
           </motion.ul>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
 

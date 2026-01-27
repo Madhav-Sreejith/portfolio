@@ -10,6 +10,7 @@ const projects = [
     link: "https://github.com/Madhav-Sreejith/MediKart",
     repo: "https://medi-kart-steel.vercel.app/",
     status: "Live",
+    tags: ["React", "E‑commerce UI", "Local Storage", "Responsive"],
   },
   {
     title: "Seasons",
@@ -18,6 +19,7 @@ const projects = [
     link: "",
     repo: "https://github.com/Madhav-Sreejith/Seasons",
     status: "Ongoing",
+    tags: ["React", "Accessibility", "Audio", "Keyboard Controls"],
   },
   {
     title: "Portfolio",
@@ -26,6 +28,7 @@ const projects = [
     link: "https://madhav-sreejith.github.io/portfolio/",
     repo: "https://github.com/Madhav-Sreejith/portfolio",
     status: "Live",
+    tags: ["React", "Personal Brand", "Animations", "Deployment"],
   },
 ];
 
@@ -39,15 +42,20 @@ function Project() {
       transition={{ duration: 0.7 }}
     >
       {/* TITLE */}
-      <motion.h1
-        id="projects-heading"
-        className="projects-title"
+      <motion.div
+        className="projects-heading-block"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        My Projects
-      </motion.h1>
+        <h1 id="projects-heading" className="projects-title">
+          My Projects
+        </h1>
+        <p className="projects-subtitle">
+          A curated selection of things I&apos;ve been building recently —
+          from practical web apps to experiments that help me learn by doing.
+        </p>
+      </motion.div>
 
       {/* PROJECT LIST */}
       <motion.div
@@ -74,9 +82,12 @@ function Project() {
             whileHover={{ y: -6 }}
             transition={{ duration: 0.4 }}
           >
-            <header>
+            <header className="project-card-header">
               <h2 className="project-card-title">{project.title}</h2>
-              <span className="project-status" aria-hidden="true">
+              <span
+                className={`project-status project-status-${project.status.toLowerCase()}`}
+                aria-hidden="true"
+              >
                 {project.status}
               </span>
             </header>
@@ -84,6 +95,16 @@ function Project() {
             <p className="project-card-description">
               {project.description}
             </p>
+
+            {project.tags && (
+              <div className="project-meta">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
 
             <div className="project-links">
               {project.link && (

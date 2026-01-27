@@ -3,17 +3,9 @@ import { motion } from "framer-motion";
 
 function Home() {
   const highlights = [
-    "🌟 Web Development",
-    "💡 Data Structures & Algorithms",
-    "💻 Competitive Programming",
-  ];
-
-  const skills = [
-    "🖥️ Full-Stack Web Development",
-    "💡 Data Structures & Algorithms",
-    "🧩 Problem Solving & Debugging",
-    "🔍 Competitive Coding",
-    "🌐 Networking & Real-Time Data",
+    "🌟 Building clean, responsive web apps",
+    "💡 Strong foundation in Data Structures & Algorithms",
+    "💻 Active in competitive programming and problem solving",
   ];
 
   const techIcons = [
@@ -32,17 +24,17 @@ function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* TOP SECTION */}
+      {/* HERO SECTION */}
       <section className="home-container">
-
-        {/* LEFT SECTION */}
-        <div className="left-block text-block">
+        <div className="hero-inner">
+          {/* PHOTO */}
           <motion.div
             className="home-photo"
-            initial={{ scale: 0.85, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
+            <div className="photo-ring" />
             <img
               src={process.env.PUBLIC_URL + "/myfoto.jpg"}
               alt="Madhav"
@@ -50,78 +42,45 @@ function Home() {
             />
           </motion.div>
 
+          {/* TEXT */}
           <motion.div
             className="home-content"
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 26, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
           >
+            <p className="home-eyebrow">Hello, I&apos;m</p>
             <h1 className="home-title">Madhav Sreejith</h1>
+            <p className="home-role">CS undergrad &amp; full‑stack developer</p>
             <p className="tagline">
-              CS undergrad passionate about full-stack development, DSA, and
-              building real-world tech projects.
+              I design and build modern web experiences, solve challenging
+              programming problems, and enjoy turning ideas into reliable,
+              production‑ready projects.
             </p>
+
+            <div className="cta-buttons">
+              <a href="/project">View Projects</a>
+              <a href="/about" className="ghost-cta">
+                About Me
+              </a>
+            </div>
+
+            <div className="hero-highlights">
+              {highlights.map((item) => (
+                <span key={item} className="hero-chip">
+                  {item}
+                </span>
+              ))}
+            </div>
           </motion.div>
         </div>
-
-        {/* RIGHT SECTION */}
-        <motion.div
-          className="right-section text-block"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.15,
-              },
-            },
-          }}
-        >
-          {highlights.map((item, index) => (
-            <motion.div
-              key={index}
-              className="highlight-card"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              {item}
-            </motion.div>
-          ))}
-        </motion.div>
       </section>
-
-      {/* SKILLS SECTION */}
-      <motion.section
-        className="skills-section text-block"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2>Skills</h2>
-        <div className="skills-list">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              className="skill-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              viewport={{ once: true }}
-            >
-              {skill}
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
 
       {/* TECH SECTION */}
       <motion.section
         className="TechImg text-block"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
@@ -134,10 +93,10 @@ function Home() {
               alt={icon.alt}
               loading="lazy"
               className="tech-icon"
-              whileHover={{ scale: 1.1 }}
-              initial={{ opacity: 0, y: 20 }}
+              whileHover={{ scale: 1.08 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
               viewport={{ once: true }}
             />
           ))}
